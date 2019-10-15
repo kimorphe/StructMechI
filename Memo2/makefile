@@ -8,15 +8,19 @@ fig3_1.eps: fig3_1.svgz
 fig3_2.eps: fig3_2.svgz
 	inkscape -z -f fig3_2.svgz -E fig3_2.eps
 fig3_3.eps: fig3_3.svgz
-	inkscape -z -f fig3_2.svgz -E fig3_2.eps
+	inkscape -z -f fig3_3.svgz -E fig3_3.eps
 fig3_4.eps: fig3_4.svgz
 	inkscape -z -f fig3_4.svgz -E fig3_4.eps
 fig3_5.eps: fig3_5.svgz
 	inkscape -z -f fig3_5.svgz -E fig3_5.eps
 fig4_1.eps: fig4_1.svgz
 	inkscape -z -f fig4_1.svgz -E fig4_1.eps
+fig4-1.eps: fig4-1.svgz
+	inkscape -z -f fig4-1.svgz -E fig4-1.eps
 fig4_2.eps: fig4_2.svgz
 	inkscape -z -f fig4_2.svgz -E fig4_2.eps
+fig4-2.eps: fig4-2.svgz
+	inkscape -z -f fig4-2.svgz -E fig4-2.eps
 fig4_3.eps: fig4_3.svgz
 	inkscape -z -f fig4_3.svgz -E fig4_3.eps
 fig5_1.eps: fig5_1.svgz
