@@ -1,0 +1,183 @@
+\documentclass[10pt,a4j]{jarticle}
+\usepackage{graphicx,wrapfig}
+\setlength{\topmargin}{-1.5cm}
+\setlength{\textwidth}{15.5cm}
+\setlength{\textheight}{25.2cm}
+\newlength{\minitwocolumn}
+\setlength{\minitwocolumn}{0.5\textwidth}
+\addtolength{\minitwocolumn}{-\columnsep}
+%\addtolength{\baselineskip}{-0.1\baselineskip}
+%
+\def\Mmaru#1{{\ooalign{\hfil#1\/\hfil\crcr
+\raise.167ex\hbox{\mathhexbox 20D}}}}
+%
+\begin{document}
+\newcommand{\fat}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\D}{\partial}
+\newcommand{\w}{\omega}
+\newcommand{\ga}{\alpha}
+\newcommand{\gb}{\beta}
+\newcommand{\gx}{\xi}
+\newcommand{\gz}{\zeta}
+\newcommand{\vhat}[1]{\hat{\fat{#1}}}
+\newcommand{\spc}{\vspace{0.7\baselineskip}}
+\newcommand{\halfspc}{\vspace{0.3\baselineskip}}
+\bibliographystyle{unsrt}
+\pagestyle{empty}
+\newcommand{\twofig}[2]
+ {
+   \begin{figure}[h]
+     \begin{minipage}[t]{\minitwocolumn}
+         \begin{center}   #1
+         \end{center}
+     \end{minipage}
+         \hspace{\columnsep}
+     \begin{minipage}[t]{\minitwocolumn}
+         \begin{center} #2
+         \end{center}
+     \end{minipage}
+   \end{figure}
+ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\vspace*{\baselineskip}
+\begin{center}
+{\Large \bf  2018年度 構造力学I及び演習A 演習問題6(11月13日)解答} \\
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}
+\item
+変位とひずみの関係は
+	\begin{equation}
+		\varepsilon_{ij}=\frac{1}{2} 
+		\left(
+		\frac{\partial u_i}{\partial x_j}
+		+
+		\frac{\partial u_j}{\partial x_i}
+		\right), \, (i,j=1,2)
+	\end{equation}
+	であるから,
+	\begin{equation}
+		\fat{D}=
+		\left(
+		\begin{array}{cc}
+			\frac{\partial u_1}{\partial x_1} &
+			\frac{\partial u_1}{\partial x_2}  \\
+			\frac{\partial u_2}{\partial x_1} &
+			\frac{\partial u_2}{\partial x_2} 
+		\end{array}
+		\right)
+	\end{equation}
+	とすれば，
+	\begin{equation}
+		\fat{\varepsilon}=\frac{1}{2}
+		\left( \fat{D} +\fat{D}^T\right)
+	\end{equation}
+	と表すことができる．与えられた変位ベクトルについて
+	$\frac{\partial u_i}{\partial x_j}$を$i,j=1,2$につ
+	いて計算すると，
+	\begin{equation}
+		\fat{D}=
+		\left(
+		\begin{array}{cc}
+			G & H \\
+			K & L 
+		\end{array}
+		\right)
+		=\fat{F}
+	\end{equation}
+	となることから，$\fat{\varepsilon}=\frac{1}{2}\left(\fat{F}+\fat{F}^T\right)$
+	であることが示される.
+\item
+	座標変換行列$\fat{Q}$を用いれば，
+	\begin{equation}
+		\fat{u}-\fat{u}_0= \fat{Q}^T \left( \fat{u}'-\fat{u}_0'\right), \ \ 
+		\fat{x}=\fat{Q}^T \fat{x}'
+	\end{equation}
+	と書くことができる．これより$\fat{u}-\fat{u}_0 = \fat{Fx}$の関係は
+	\begin{equation}
+		\fat{Q}^T \left( \fat{u}'-\fat{u}_0'\right)
+		=
+		\fat{F}\fat{Q}^T \fat{x}'
+	\end{equation}
+	と表すことができ，この両辺に左から$\fat{Q}$を掛ければ，
+	\begin{equation}
+		\fat{u}'-\fat{u}_0'
+		=
+		\fat{Q}\fat{F}\fat{Q}^T \fat{x}'
+	\end{equation}
+	が導かれる．この結果と$\fat{u}'-\fat{u}_0' = \fat{F}'\fat{x}'$を比較することで
+	\begin{equation}
+		\fat{F}'=\fat{Q} \fat{F}\fat{Q}^T
+		\label{eqn:F2Fd}
+	\end{equation}
+	が言え，行列$\fat{F}$は応力テンソルと同じ座標変換法則に従うことが示される．
+\item
+	式(\ref{eqn:F2Fd})より, $(\fat{F}')^T=\fat{Q}\fat{F}^T\fat{Q}^T$である．
+	この関係と式(\ref{eqn:F2Fd})を$\fat{\varepsilon}'$の定義に代入すれば, 
+	\begin{equation}
+		\fat{\varepsilon}'=\fat{Q}\fat{\varepsilon}\fat{Q}^T
+	\end{equation}
+	となることが示される．
+	以上より，ひずみテンソルは応力テンソルと同じ座標変換法則に従うことが示される．
+\item
+	ひずみテンソルは応力テンソルと同じ座標変換法則に従うことから，
+	\begin{equation}
+		\bar \varepsilon = \frac{\varepsilon_{11}+ \varepsilon_{22}}{2} , \ \ 
+		\Delta  \varepsilon = \varepsilon_{11}- \varepsilon_{22}, \ \ 
+		\eta = \varepsilon_{12}=\varepsilon_{21}
+	\end{equation}
+	とすれば，
+	\begin{eqnarray}
+		\varepsilon_{11}' &=& 
+			\bar \varepsilon + \frac{\Delta \varepsilon}{2} \cos 2\theta + \eta \sin 2\theta 
+			\label{eqn:e11d}
+			\\
+		\varepsilon_{12}' &=& 
+			-\frac{\Delta \varepsilon}{2} \sin 2\theta + \eta \cos 2\theta 
+			\label{eqn:e12d}
+			\\
+		\varepsilon_{22}' &=& 
+			\bar \varepsilon - \frac{\Delta \varepsilon}{2} \cos 2\theta - \eta \sin 2\theta 
+			\label{eqn:e22d}
+	\end{eqnarray}
+	の関係が成り立つことは明らかである.
+	これらに, $\theta=\frac{\pi}{4}$を代入すれば，
+	\begin{eqnarray}
+		\varepsilon_{11}' &=& 
+			\bar \varepsilon + \eta \label{eqn:e11d_pi4}\\
+		\varepsilon_{12}' &=& 
+			-\frac{\Delta \varepsilon}{2} \label{eqn:e12d_pi4}\\
+		\varepsilon_{22}' &=& 
+			\bar \varepsilon - \eta  \label{eqn:e22d_pi4}
+	\end{eqnarray}
+	となる. よって, 式(\ref{eqn:e11d_pi4})-(\ref{eqn:e22d_pi4})に, 
+	既知のひずみ値を代入すれば，
+	\begin{equation}
+		\eta=\varepsilon_{12}=\frac{1}{\sqrt{2}}, \ \ 
+		\varepsilon_{12}'=-\frac{1}{\sqrt{2}}, \ \ 
+		\varepsilon_{22}'=-\frac{1}{\sqrt{2}}
+		\label{eqn:evals}
+	\end{equation}
+	が得られる．
+\item
+	式(\ref{eqn:e12d})と式(\ref{eqn:evals})より，$\varepsilon_{12}'$は，
+	$\theta=\frac{\pi}{8}$でゼロになる．またこのとき,式(\ref{eqn:e11d})と式(\ref{eqn:e22d})
+	より
+	\begin{equation}
+		\varepsilon_{11}'=1,　\ \ 	\varepsilon_{22}'=-1
+	\end{equation}
+	である．
+	このように，せん断ひずみがゼロになるときの軸ひずみは主ひずみと呼ばれ，主ひずみを与える
+	方向は主ひずみ方向と呼ばれる．
+\end{enumerate}
+\end{document}
+%--------------------
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=0.85\linewidth]{fig1ans.eps} 
+	\end{center}
+	\vspace{-5mm}
+	\caption{正方形領域ABCDおよびPQRSの変形状況．} 
+	\label{fig:fig1}
+\end{figure}
+%--------------------

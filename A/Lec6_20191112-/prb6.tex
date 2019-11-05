@@ -1,0 +1,192 @@
+\documentclass[10pt,a4j]{jarticle}
+\usepackage{graphicx,wrapfig}
+\setlength{\topmargin}{-1.5cm}
+\setlength{\textwidth}{15.5cm}
+\setlength{\textheight}{25.2cm}
+\newlength{\minitwocolumn}
+\setlength{\minitwocolumn}{0.5\textwidth}
+\addtolength{\minitwocolumn}{-\columnsep}
+%\addtolength{\baselineskip}{-0.1\baselineskip}
+%
+\def\Mmaru#1{{\ooalign{\hfil#1\/\hfil\crcr
+\raise.167ex\hbox{\mathhexbox 20D}}}}
+%
+\begin{document}
+\newcommand{\fat}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\D}{\partial}
+\newcommand{\w}{\omega}
+\newcommand{\ga}{\alpha}
+\newcommand{\gb}{\beta}
+\newcommand{\gx}{\xi}
+\newcommand{\gz}{\zeta}
+\newcommand{\vhat}[1]{\hat{\fat{#1}}}
+\newcommand{\spc}{\vspace{0.7\baselineskip}}
+\newcommand{\halfspc}{\vspace{0.3\baselineskip}}
+\bibliographystyle{unsrt}
+\pagestyle{empty}
+\newcommand{\twofig}[2]
+ {
+   \begin{figure}[h]
+     \begin{minipage}[t]{\minitwocolumn}
+         \begin{center}   #1
+         \end{center}
+     \end{minipage}
+         \hspace{\columnsep}
+     \begin{minipage}[t]{\minitwocolumn}
+         \begin{center} #2
+         \end{center}
+     \end{minipage}
+   \end{figure}
+ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\vspace*{\baselineskip}
+\begin{center}
+{\Large \bf2018年度 構造力学I及び演習A 演習問題6(11月13日)} \\
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{問題}
+2次元空間内の物体がある応力を受けて変形し, そのときの変位ベクトル
+$\fat{u}$が位置$\fat{x}$の関数として次のように与えられたとする．
+\begin{equation}
+	\fat{u}(\fat{x})=\fat{u}_0 + \fat{F}\fat{x}
+	\label{eqn:disp_fld}
+\end{equation}
+ここに，$\fat{u}=(u_1,\, u_2)$は変位ベクトルを，$\fat{x}=(x_1, x_2)$は位置ベクトルを
+$\fat{u}_0=(u_{01},u_{02})$は$\fat{x}=(0,0)$における変位ベクトルを表す．また，
+$\fat{F}$は定数係数の2$\times$2行列
+\begin{equation}
+	\fat{F}=
+	\left(
+	\begin{array}{cc}
+		G & H \\
+		K & L
+	\end{array}
+	\label{eqn:Fmat}
+	\right)
+\end{equation}
+であるとし，以上は全て$o-x_1x_2$直交座標系による表現であるとする．
+ここで，$o-x_1x_2$座標系を，原点を中心に$\theta$だけ反時計回りの方向へ
+回転させて得られるもう一つの直交座標系を$o-x_1'x_2'$座標系と呼ぶ．
+$o-x_1'x_2'$座標系では，式(\ref{eqn:disp_fld})の関係を表すときに，
+ベクトルやマトリクスとその成分に$(\cdot)'$をつけることで，
+それらが依拠する座標系を区別する．
+すなわち，$o-x_1'x_2'$座標系では，式(\ref{eqn:disp_fld})の関係を
+\begin{equation}
+	\fat{u}'(\fat{x}')=\fat{u}'_0 + \fat{F}'\fat{x}'
+	\label{eqn:disp_fld2}
+\end{equation}
+と表す．ここで，
+\begin{equation}
+	\fat{u}'=(u_1',\, u_2'), \ \ 
+	\fat{u}_0'=(u_{01}',\, u_{02}')
+\end{equation}
+が変位ベクトルを，
+\begin{equation}
+	\fat{x}'=(x_1',\, x_2')
+\end{equation}
+が位置ベクトルを，
+\begin{equation}
+	\fat{F}'=
+	\left(
+	\begin{array}{cc}
+		G' & H' \\
+		K' & L'
+	\end{array}
+	\label{eqn:Fmat2}
+	\right)
+\end{equation}
+は，$\fat{F}$に対応する2$\times$2行列を意味する．
+このとき，以下の問に答えよ．
+\begin{enumerate}
+\item
+	$o-x_1x_2$座標系におけるひずみテンソルを
+	\[
+	\fat{\varepsilon}
+	=
+	\left(
+	\begin{array}{cc}
+		\varepsilon_{11} & \varepsilon_{12} \\
+		\varepsilon_{21} & \varepsilon_{22} 
+	\end{array}
+	\right)
+	\]
+	と表すとき，
+	\begin{equation}
+		\fat{\varepsilon} = 
+		\frac{1}{2} \left(
+			\fat{F}+\fat{F}^T
+		\right)
+		\label{eqn:eij_of_F}
+	\end{equation}
+	であることを示せ．
+	{\small
+	(式(\ref{eqn:disp_fld})の変位ベクトルに対してひずみを成分毎に計算し，
+	その結果が式(\ref{eqn:eij_of_F})
+	のようにまとめられることを示せばよい.)}
+\item
+	$o-x_1x_2$から$o-x_1'x_2'$座標系への座標変換マトリクスを$\fat{Q}$とするとき，
+	\[\fat{F}'=\fat{Q}\fat{F}\fat{Q}^T\]		
+	の関係が成り立つことを示せ．
+\item
+	$o-x_1'x_2'$座標系におけるひずみテンソル
+	\[
+		\fat{\varepsilon}' = 
+		\left(
+		\begin{array}{cc}
+			\varepsilon_{11}' & \varepsilon_{12}' \\
+			\varepsilon_{21}' & \varepsilon_{22}' 
+		\end{array}
+		\right)
+	\]
+	を
+	\[
+		\fat{\varepsilon}' 
+		=
+		\frac{1}{2} \left(
+			\fat{F}'+(\fat{F}')^T
+		\right)
+	\]
+	で定義する．このとき
+	\begin{equation}
+		\fat{\varepsilon}'=\fat{Q}\fat{\varepsilon}\fat{Q}^T
+		\label{eqn:e2ed}
+	\end{equation}		
+	であることを示せ．
+\item
+	$\theta=\frac{\pi}{4}$のときに, $\fat{\varepsilon}$と$\fat{\varepsilon}'$
+	が以下のようであったとする．
+	\begin{equation}
+		\fat{\varepsilon}=
+		\frac{1}{\sqrt{2}}
+		\left(
+			\begin{array}{cc}
+				1 & \varepsilon_{12} \\
+				\varepsilon_{12} & -1 
+			\end{array}
+		\right)
+		, \ \ 
+		\fat{\varepsilon}'=
+		\frac{1}{\sqrt{2}}
+		\left(
+			\begin{array}{cc}
+				1 & \varepsilon_{12}' \\
+				\varepsilon_{12}' & \varepsilon_{22}' 
+			\end{array}
+		\right)
+	\end{equation}
+	このとき, $\varepsilon_{12}$と$\varepsilon_{12}',\varepsilon_{22}'$を求めよ．
+\item
+	前問で求めたひずみテンソル$\fat{\varepsilon}$について，$\varepsilon_{12}'=0$となるような$\theta$と，
+	そのときの直ひずみ$\varepsilon_{11}',\varepsilon_{22}'$を求めよ．
+\end{enumerate}
+\end{document}
+
+%--------------------
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=0.8\linewidth]{fig1.eps} 
+	\end{center}
+	\caption{(a)$o-x_1x_2$座標系と, (b)固有ベクトル$\fat{n}_1,\fat{n}_2$を基底ベクトルにもつ$o-x_1'x_2'$座標系.} 
+	\label{fig:fig1}
+\end{figure}
+%--------------------
