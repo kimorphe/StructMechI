@@ -6,10 +6,8 @@ prb6.dvi: prb6.tex fig1.eps
 	platex prb6.tex 
 ans6.pdf: ans6.dvi
 	dvipdfmx -p a4 ans6.dvi 
-ans6.dvi: ans6.tex fig1ans.eps
+ans6.dvi: ans6.tex fig1.eps
 	platex ans6.tex 
 
 fig1.eps: fig1.svgz
 	inkscape -z -f fig1.svgz -E fig1.eps
-fig1ans.eps: fig1ans.svgz
-	inkscape -z -f fig1ans.svgz -E fig1ans.eps
