@@ -80,7 +80,7 @@
 	\begin{center}
 	\includegraphics[width=0.7\linewidth]{fig0.eps} 
 	\end{center}
-	\caption{物体内部の着目点$fat{x}$のまわりにとった微小領域．} 
+	\caption{物体内部の着目点$\fat{x}$のまわりにとった微小領域．} 
 	\label{fig:fig0}
 \end{figure}
 例えば，$\sigma_{11}$が作用することにより，図\ref{fig:fig3_1}-(a)のような
@@ -387,7 +387,7 @@ $\varepsilon_{31}$についても同様である．そこで，せん断応力$\
 	\left\{ 
 		\begin{array}{*{20}{c}}
 		\sigma_{23}\\
-		\sigma_{13}\\
+		\sigma_{31}\\
 		\sigma_{12}
 		\end{array}
 	\right\} 
@@ -396,8 +396,17 @@ $\varepsilon_{31}$についても同様である．そこで，せん断応力$\
 	\left\{
 		\begin{array}{*{20}{c}}
 		\gamma_{23}\\
-		\gamma_{13}\\
+		\gamma_{31}\\
 		\gamma_{12}
+		\end{array}
+	\right\}
+	=
+	2G
+	\left\{
+		\begin{array}{*{20}{c}}
+		\varepsilon_{23}\\
+		\varepsilon_{31}\\
+		\varepsilon_{12}
 		\end{array}
 	\right\}
 	\label{eqn:sij_gij}
@@ -413,7 +422,7 @@ $\varepsilon_{31}$についても同様である．そこで，せん断応力$\
 式(\ref{eqn:eii_sjj_mat})から式(\ref{eqn:sii_ejj_mat})の関係を導く過程を示せ. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{2次元問題}
-連続体（固体や流体）における2次元問題には，"{\bf 平面ひずみ問題}"と"{\bf 平面応力問題}"の
+連続体(固体や流体)における2次元問題には，"{\bf 平面ひずみ問題}"と"{\bf 平面応力問題}"の
 2種類がある．
 \subsection{平面ひずみ問題}
 図\ref{fig:fig6_2}-(a)に示すように，一様な断面を持つ非常に長い物体があるとする．
@@ -424,7 +433,7 @@ $\varepsilon_{31}$についても同様である．そこで，せん断応力$\
 ひずみ、変位等の力学量は$x_1$と$x_2$の2変数のみの関数となる.
 このとき$x_3$に関する偏微分は明らかにゼロであることから,ただちに
 $\varepsilon_{33}=\frac{\partial u_3}{\partial x_3}=0$となることが分かる.
-従って,直応力と直ひずみの関係は
+従って,直応力と直ひずみの関係は，式(\ref{eqn:sii_ejj_mat})より，
 \begin{equation}
 	\left\{ 
 	\begin{array}{*{20}{c}}
@@ -475,11 +484,11 @@ $\varepsilon_{33}=\frac{\partial u_3}{\partial x_3}=0$となることが分か�
 と与えられる.ただし, $\sigma_{33}$はゼロでなく,
 \begin{equation}
 	\sigma_{33}
-	=\frac{\nu E}{(1+\nu)(1-2\nu)}\left(\varepsilon_{11}+\varepsilon_{22}\right)
 	=\nu \left(\sigma_{11}+\sigma_{22}\right)
+	=\frac{\nu E}{(1+\nu)(1-2\nu)}\left(\varepsilon_{11}+\varepsilon_{22}\right)
 	\label{eqn:s33_pstrain}
 \end{equation}
-であることに注意が必要である.
+であることが，式(\ref{eqn:eii_sjj_mat})と(\ref{eqn:sii_ejj_mat})から示される．
 \subsection{平面応力問題}
 図\ref{fig:fig6_2}-(b)のように，$x_3$軸を法線とするような平板があったとする.
 外力は平板側面において$x_1x_2$面内の方向に作用し，上下面に外力は作用しないとする．
@@ -490,7 +499,8 @@ $\varepsilon_{33}=\frac{\partial u_3}{\partial x_3}=0$となることが分か�
 \begin{equation}
  \sigma_{31}=\sigma_{32}=\sigma_{33}=0
 \end{equation}
-と考え, これより，$\varepsilon_{32}=\varepsilon_{31}=0$と
+としてよく, 式(\ref{eqn:gij_sij})から$\varepsilon_{32}=\varepsilon_{31}=0$が，
+式(\ref{eqn:eii_sjj_mat})から次のことが言える．
 \begin{equation}
 	\left\{ 
 	\begin{array}{*{20}{c}}
@@ -513,7 +523,7 @@ $\varepsilon_{33}=\frac{\partial u_3}{\partial x_3}=0$となることが分か�
 	\right\}
 	\label{eqn:Cmpl_pstress}
 \end{equation}
-が従う．また，式(\ref{eqn:Cmpl_pstress})より
+が従う．また，式(\ref{eqn:Cmpl_pstress})のを直ひずみ成分について解くと，
 \begin{equation}
 	\left\{ 
 	\begin{array}{*{20}{c}}
@@ -536,12 +546,12 @@ $\varepsilon_{33}=\frac{\partial u_3}{\partial x_3}=0$となることが分か�
 	\right\}
 	\label{eqn:Hooke_pstress}
 \end{equation}
-である．従って，
+となる．最後に，$\sigma_{33}=0$であることから，式(\ref{eqn:eii_sjj_mat})と(\ref{eqn:sii_ejj_mat})より，
 \begin{equation}
 	\varepsilon_{33}=-\frac{\nu}{E} \left( \sigma_{11}+\sigma_{22} \right)
 	= -\frac{\nu}{1-\nu}\left(\varepsilon_{11}+\varepsilon_{22}\right)
 \end{equation}
-となり，この場合は$\varepsilon_{33}$がゼロでないことに注意が必要である．
+が言え，平面応力問題では$\varepsilon_{33}$がゼロでないことに注意が必要となる．
 \begin{figure}[h]
 	\begin{center}
 	\includegraphics[width=0.9 \linewidth]{2D_problems.eps} 
