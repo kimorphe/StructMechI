@@ -1,0 +1,213 @@
+\documentclass[10pt,a4j]{jarticle}
+\usepackage{graphicx,wrapfig}
+\setlength{\topmargin}{-1.5cm}
+\setlength{\textwidth}{15.5cm}
+\setlength{\textheight}{25.2cm}
+\newlength{\minitwocolumn}
+\setlength{\minitwocolumn}{0.5\textwidth}
+\addtolength{\minitwocolumn}{-\columnsep}
+%\addtolength{\baselineskip}{-0.1\baselineskip}
+%
+\def\Mmaru#1{{\ooalign{\hfil#1\/\hfil\crcr
+\raise.167ex\hbox{\mathhexbox 20D}}}}
+%
+\begin{document}
+\newcommand{\fat}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\D}{\partial}
+\newcommand{\w}{\omega}
+\newcommand{\ga}{\alpha}
+\newcommand{\gb}{\beta}
+\newcommand{\gx}{\xi}
+\newcommand{\gz}{\zeta}
+\newcommand{\vhat}[1]{\hat{\fat{#1}}}
+\newcommand{\spc}{\vspace{0.7\baselineskip}}
+\newcommand{\halfspc}{\vspace{0.3\baselineskip}}
+\bibliographystyle{unsrt}
+\pagestyle{empty}
+\newcommand{\twofig}[2]
+ {
+   \begin{figure}[h]
+     \begin{minipage}[t]{\minitwocolumn}
+         \begin{center}   #1
+         \end{center}
+     \end{minipage}
+         \hspace{\columnsep}
+     \begin{minipage}[t]{\minitwocolumn}
+         \begin{center} #2
+         \end{center}
+     \end{minipage}
+   \end{figure}
+ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\vspace*{\baselineskip}
+\begin{center}
+{\Large \bf 2018年度 構造力学I及び演習B(12月14日) 演習問題2 解答} \\
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{問題(1)}
+はじめに，図\ref{fig:fig1_1}-(a)に示すような, 単純支持された梁に単一の荷重が作用する問題
+について考える．支点反力の正方向を同図にあるように定めると，はり全体の力とモーメントの
+釣り合いから，
+\begin{equation}
+	R_A=\frac{b}{l}F, \ \ 
+	R_C=\frac{a}{l}F, \ \ 
+	H_A=0 
+	\label{eqn:Rs_simple}
+\end{equation}
+となる．また，a-a'の位置で梁を切断して自由物体図を描くと，
+図\ref{fig:fig1_1}-(b)のようになる．この図に基づき，
+力とモーメントの釣り合い条件を立てると，
+\begin{eqnarray}
+	Q(x)-R_A=0  &\Rightarrow & Q(x)= R_A=\frac{b}{l}F
+	\label{eqn:Qx}
+	\\
+	M(x)-R_Ax=0  &\Rightarrow & M(x)= R_Ax=\frac{b}{l}Fx
+	\label{eqn:Mx}
+\end{eqnarray}
+と$0<x<a $における断面力が求められる．一方，b-b'で梁を切断した
+場合，自由物体図は図\ref{fig:fig1_1}-(c)のようであり，釣り合い条件から
+断面力が
+\begin{eqnarray}
+	Q(y)+R_C=0  &\Rightarrow & Q(y)= -R_C=-\frac{a}{l}F
+	\label{eqn:Qy}
+	\\
+	M(y)-R_Cy=0  &\Rightarrow & M(y)= R_Cy=\frac{a}{l}Fy
+	\label{eqn:My}
+\end{eqnarray}
+と求められる．以上の結果を断面力図として示すと，図\ref{fig:fig1_1}-(d)と(e)の
+ようになる．
+
+問題で与えられた系では，左から，大きさ$P,2P$および$3P$の集中荷重が加えられている．
+これら3つの荷重のうち，ひとつだけが加えられた場合のせん断力を順に$Q_1, Q_2,Q_3$, 
+曲げモーメントを$M_1, M_2, M_3$とすれば，問題で与えられた系のせん断力$Q$と
+曲げモーメント$M$は
+\begin{equation}
+	Q=Q_1+Q_2+Q_3, \ \ 
+	M=M_1+M_2+M_3
+	\label{eqn:}
+\end{equation}
+と表すことができる．$Q_i,M_i(i=1,2,3)$は，式(\ref{eqn:Qx})-(\ref{eqn:My})の
+特別な場合として得ることができる．すなわち，
+$a=\frac{l}{4}, F=P$とすれば，$Q_1$と$M_1$が，$a=\frac{l}{2}, F=2P$とすれば
+$Q_2$と$M_2$が，$a=\frac{3l}{4}, F=3P$とすれば，$Q_3$と$M_3$が
+得られる．その結果を断面力図として示すと，図\ref{fig:fig1_2}のようになる．
+支点反力についても，荷重$P$, $2P$および$3P$に起因して発生する支点反力の
+合計が，問題で与えられた系における支点反力となることから，支点AとEにおける鉛直反力
+$R_A$と$R_E$は次のようになる．
+\begin{equation}
+	R_A=\frac{3}{4}P+ P + \frac{3}{4}P=\frac{5}{2}P, \ \ 
+	R_E=\frac{1}{4}P+ P + \frac{9}{4}P=\frac{7}{2}P
+	\label{eqn:Rs_prb1}
+\end{equation}
+断面力分布と支点反力は，問題で与えられた系とその適当な部分構造に対して
+釣り合い式を立てることでも求めることができる．その場合は，区間毎に
+構造を切断して自由物体図を描き，力とモーメントの釣り合い条件式をたてればよい．
+%--------------------
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=0.50\linewidth]{fig1ans1.eps} 
+	\end{center}
+	\caption{単一の集中荷重を受ける単純支持された梁.} 
+	\label{fig:fig1_1}
+\end{figure}
+%--------------------
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=1.0\linewidth]{fig1ans2.eps} 
+	\end{center}
+	\caption{曲げモーメント図及びせん断力図(問題1).} 
+	\label{fig:fig1_2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{問題(2)}
+支点反力の正方向を図\ref{fig:fig2_1}-(a)のように定め，鉛直力及びC点周りの
+モーメントのつり合い式を立てれば
+\begin{eqnarray}
+	\left\{
+	\begin{array}{ll}
+		R_C - \frac{q_0l}{2}-\frac{q_0l}{4}= 0 \\
+		M_C+\frac{q_0l}{2} \times \frac{l}{4}+
+		\frac{q_0l}{4} \times \left( \frac{l}{2}+\frac{l}{6} \right)=0 
+	\end{array}
+	\right.
+\end{eqnarray}
+より，
+\begin{equation}
+	R_C = \frac{3}{4}q_0l, \ \ M_C=-\frac{7}{24}q_0l^2, \ \ H_C=0
+\end{equation}
+となる．
+次に，図\ref{fig:fig2_1}-(a)のa-a'および b-b'で梁を仮想的に
+切断し, その結果得られる部分構造について自由物体図を描けば, 
+同図(b)と(c)のようになる．また，これらの自由物体図に現れる分布荷重を
+それと等価な集中荷重に置き換えれば，図\ref{fig:fig2_1}-(b')と(c')のよう
+になる．この結果を踏まえて釣り合い条件式を立てれば，断面力分布が
+区間毎に以下のように求められる．
+\begin{itemize}
+\item
+	区間AB$\left( 0<x<\frac{l}{2}\right)$:\\
+	\begin{equation}
+		Q(x) + \frac{q_0}{l}x^2 = 0
+	\end{equation}
+	\begin{equation}
+		M(x) + \frac{q_0}{l}x^2 \times \frac{x}{3}= 0
+	\end{equation}
+	だから，
+	\begin{equation}
+		Q(x) =- \frac{q_0}{l}x^2
+	\end{equation}
+	\begin{equation}
+		M(x) =-\frac{q_0}{3l}x^3.
+	\end{equation}
+\item
+	区間BC$\left( 0<y<\frac{l}{2}\right)$:\\
+	\begin{equation}
+		Q(y) + \frac{q_0l}{4}+q_0y = 0
+	\end{equation}
+	\begin{equation}
+		M(y)+ \frac{q_0l}{4}\times \left(y+\frac{l}{6}\right) + q_0y \times \frac{y}{2} =0
+	\end{equation}
+	より，
+	\begin{equation}
+		Q(y) =- \frac{q_0l}{4}-q_0y
+	\end{equation}
+	\begin{eqnarray}
+		M(y)  
+		&=& 
+		-\frac{q_0l^2}{24} \left\{ 
+			1 + 6\left( \frac{y}{l}\right)
+			+ 12\left( \frac{y}{l}\right)^2
+		\right\}	
+		\nonumber 
+		\\
+		&=& 
+		-\frac{q_0l^2}{24} \left\{ 
+			1 + 3\left( \frac{y}{l/2}\right)
+			+ 3\left( \frac{y}{l/2}\right)^2
+		\right\}	
+		\label{eqn:My_prb2}
+	\end{eqnarray}
+	となる．
+\end{itemize}
+これらの結果を断面力図として示すと，図\ref{fig:fig2_2}のようになる．
+%--------------------
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=0.6\linewidth]{fig2ans1.eps} 
+	\end{center}
+	\caption{問題(2)の解答のための自由物体図.} 
+	\label{fig:fig2_1}
+\end{figure}
+%--------------------
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=0.5\linewidth]{fig2ans2.eps} 
+	\end{center}
+	\caption{曲げモーメント図及びせん断力図(問題2).} 
+	\label{fig:fig2_2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

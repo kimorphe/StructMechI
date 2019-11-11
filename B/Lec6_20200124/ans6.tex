@@ -1,0 +1,174 @@
+﻿\documentclass[10pt,a4j]{jarticle}
+\usepackage{graphicx,wrapfig}
+\setlength{\topmargin}{-1.5cm}
+\setlength{\textwidth}{15.5cm}
+\setlength{\textheight}{25.2cm}
+\newlength{\minitwocolumn}
+\setlength{\minitwocolumn}{0.5\textwidth}
+\addtolength{\minitwocolumn}{-\columnsep}
+%\addtolength{\baselineskip}{-0.1\baselineskip}
+%
+\def\Mmaru#1{{\ooalign{\hfil#1\/\hfil\crcr
+\raise.167ex\hbox{\mathhexbox 20D}}}}
+%
+\begin{document}
+\newcommand{\fat}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\D}{\partial}
+\newcommand{\w}{\omega}
+\newcommand{\ga}{\alpha}
+\newcommand{\gb}{\beta}
+\newcommand{\gx}{\xi}
+\newcommand{\gz}{\zeta}
+\newcommand{\vhat}[1]{\hat{\fat{#1}}}
+\newcommand{\spc}{\vspace{0.7\baselineskip}}
+\newcommand{\halfspc}{\vspace{0.3\baselineskip}}
+\bibliographystyle{unsrt}
+\pagestyle{empty}
+\newcommand{\twofig}[2]
+ {
+   \begin{figure}[h]
+     \begin{minipage}[t]{\minitwocolumn}
+         \begin{center}   #1
+         \end{center}
+     \end{minipage}
+         \hspace{\columnsep}
+     \begin{minipage}[t]{\minitwocolumn}
+         \begin{center} #2
+         \end{center}
+     \end{minipage}
+   \end{figure}
+ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\vspace*{\baselineskip}
+\begin{center}
+{\Large \bf 2018年度 構造力学I及び演習B (1月25日) 演習問題6 解答} \\
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{問題1.}
+図\ref{fig:fig1}-(a)に示すように,区間BC内に単位荷重が加えられたとき，
+支点部Bに発生する曲げモーメントを求める.そのために,(a)に示した構造を,
+同図の(b)と(c)のような２つの静定構造の重ね合わせで表現する.
+ここで,$R_B$は,系(a)の点Bにおいて発生する鉛直方向の支点反力を表す.
+はじめに,系(c)のたわみ$v_c$を,たわみの微分方程式を単純支持条件の元で
+解くことによって求めると,その結果は$\alpha=a/l,\, \beta=b/l, \, \xi=x/l$として,
+\begin{equation}
+ v_c=\frac{\tilde Pl^3}{6EI}\left\{
+ \left< \xi-\alpha \right>^3 -\beta \xi^3 +\beta (1-\beta^2)\xi 
+ \right\}
+ \label{eqn:vc}
+\end{equation}
+と表される.一方,系(b)のたわみ$v_b$は,式(\ref{eqn:vc})において$\tilde P=-R_B, a=b=\frac{l}{2}$と
+置くことで,
+\begin{equation}
+ v_b=\frac{(-R_B)l^3}{6EI}\left\{
+		\left< \xi-\frac{1}{2} \right>^3 -\frac{1}{2} \xi^3 +\frac{3}{8}\xi 
+	\right\}
+	\label{eqn:vb}
+\end{equation}
+と得られる.以上の結果を,系(a)の支点Bにおける拘束条件:
+\begin{equation}
+	v_b\left(\frac{l}{2}\right) 
+	+
+	v_c\left(\frac{l}{2}\right) =0
+\end{equation}
+に代入すれば,未知の支点反力$R_B$が
+\begin{equation}
+	R_B=(3\beta-4\beta^3)\tilde P
+	\label{eqn:RB}
+\end{equation}
+と求めれられる.系(a)の支点AとCにおける反力は,$R_B$が既知となったため,釣り合い条件
+から決定することができ,その結果は
+\begin{equation}
+	R_A=\beta \tilde P -\frac{R_B}{2}=\left(2\beta^3-\frac{1}{2}\beta \right)\tilde P, \ \ 
+	R_C=\alpha \tilde P -\frac{R_B}{2}=\left(2\beta^3-\frac{3}{2}\beta +\alpha \right)\tilde P, \ \ 
+\end{equation}
+となる．また，点Bにおける曲げモーメント$M_B$も釣り合い条件から求まり，
+\begin{equation}
+	M_B=R_A\times\frac{l}{2}=\frac{\tilde Pl}{4} \beta (4\beta^2-1)
+\end{equation}
+となる.$\alpha \in (1/2,1), \, \beta \in (0,1)$なので,以上により，影響線の右半分(区間BC)
+が得られたことになる.単位荷重が区間AC内にあるときも,同様にして影響線を計算することができる. 
+しかしながらこの問題では,曲げに関する支持条件の対称性から,影響線は点Bに関して左右対照となる
+ことがわかるので,上で求めた結果に加えてこのことを踏まえれば，
+左半分の区間について実際に計算を行うことなく影響線が
+図\ref{fig:fig2}のようになることが分かる．
+%%--------------------
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=0.55\linewidth]{fig1ans.eps}
+	\end{center}
+	\caption{問題1の解答に用いた3つの系.}
+	\label{fig:fig1}
+\end{figure}
+%--------------------
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=0.7\linewidth]{fig2ans.eps} 
+	\end{center}
+	\caption{支点部Bにおける曲げモーメント$M_B$の影響線}
+	\label{fig:fig2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%
+%
+\subsubsection*{問題2.}
+\begin{enumerate}
+\item
+支点A,C,D,Fにおける鉛直反力と,ヒンジ部BとEにおいて伝達される鉛直力の
+正方向を各々図\ref{fig:fig3}-(a)のように定める.
+これらの鉛直力は,区間AB，BE，EFそれぞれにおいて力とモーメントの釣り合いを考える
+ことで，以下のように決定される.
+\begin{equation}
+	R_A=R_B=\frac{q_0l}{4}, \ \ 
+	R_C=q_0l, \ \ R_D=-\frac{q_0l}{4}, \ \ R_E=R_F=0
+\end{equation}
+\item
+区間AB，BE，EFの単位で構造を見ると,すべて静定構造となっているため，区間毎に釣り合い条件を適用して
+曲げモーメントを求めることができる.その結果を曲げモーメント図として示せば,図\ref{fig:fig4}のように
+なる.この図には,曲げモーメント分布は連続で,等分布荷重が加わる区間は2次関数的に,
+荷重が作用しない区間では直線的に曲げモーメント値が変化することが示されていることに注意する.
+\item
+図\ref{fig:fig4}より,曲げモーメントは点Cにおいて最大値をとる.
+\begin{equation}
+	M_{max}=\left|-\frac{q_0l^2}{4}\right| = \frac{q_0l^2}{4}
+\end{equation}
+\item
+曲げ応力$\sigma=\frac{M}{I}y$は,曲げモーメントが最大となる断面の上縁$y=-a$あるいは下縁$y=a$において最大となる.
+また,半径$a$の円断面の中立軸に関する断面2次モーメント$I$は
+\begin{equation}
+	I=\frac{\pi a^4}{4}	
+\end{equation}
+だから,
+\begin{equation}
+	\sigma_{max}=\frac{M_{max}}{I}a=\frac{q_0l^2}{\pi a^3}
+\end{equation}
+となる.
+\item
+上で求めた$\sigma_{max}$を不等式$\sigma_{max}<\sigma_a$に代入し,$a$に関して
+整理すれば,
+\begin{equation}
+	a \geq \sqrt[3]{\frac{q_0l^2}{\pi \sigma_a}} 
+\end{equation}
+となるので,許容される$a$の最小値は$\sqrt[3]{\frac{q_0l^2}{\pi \sigma_a}}$である.
+\end{enumerate}
+%--------------------
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=0.7\linewidth]{fig3ans.eps} 
+	\end{center}
+	\caption{
+		(a)支点反力の正方向と切断面二つの位置a-a', b-b'. 
+		(b) 曲げモーメント図.} 
+	\label{fig:fig3}
+\end{figure}
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=0.7\linewidth]{fig4ans.eps} 
+	\end{center}
+	\caption{
+		(a)支点反力の正方向と切断面二つの位置a-a', b-b'. 
+		(b) 曲げモーメント図.} 
+	\label{fig:fig4}
+\end{figure}
+\end{document}

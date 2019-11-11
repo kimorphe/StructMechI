@@ -1,0 +1,155 @@
+\documentclass[10pt,a4j]{jarticle}
+\usepackage{graphicx,wrapfig}
+\setlength{\topmargin}{-1.5cm}
+\setlength{\textwidth}{15.5cm}
+\setlength{\textheight}{25.2cm}
+\newlength{\minitwocolumn}
+\setlength{\minitwocolumn}{0.5\textwidth}
+\addtolength{\minitwocolumn}{-\columnsep}
+%\addtolength{\baselineskip}{-0.1\baselineskip}
+%
+\def\Mmaru#1{{\ooalign{\hfil#1\/\hfil\crcr
+\raise.167ex\hbox{\mathhexbox 20D}}}}
+%
+\begin{document}
+\newcommand{\fat}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\D}{\partial}
+\newcommand{\w}{\omega}
+\newcommand{\ga}{\alpha}
+\newcommand{\gb}{\beta}
+\newcommand{\gx}{\xi}
+\newcommand{\gz}{\zeta}
+\newcommand{\vhat}[1]{\hat{\fat{#1}}}
+\newcommand{\spc}{\vspace{0.7\baselineskip}}
+\newcommand{\halfspc}{\vspace{0.3\baselineskip}}
+\bibliographystyle{unsrt}
+\pagestyle{empty}
+\newcommand{\twofig}[2]
+ {
+   \begin{figure}[h]
+     \begin{minipage}[t]{\minitwocolumn}
+         \begin{center}   #1
+         \end{center}
+     \end{minipage}
+         \hspace{\columnsep}
+     \begin{minipage}[t]{\minitwocolumn}
+         \begin{center} #2
+         \end{center}
+     \end{minipage}
+   \end{figure}
+ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\vspace*{\baselineskip}
+\begin{center}
+{\Large \bf 2018年度 構造力学I及び演習B (1月11日)演習問題4　解答} \\
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{問題1}
+断面$S$の面積$\left| S \right|$は， $k=\frac{\pi}{b}$として，
+\begin{eqnarray}
+	\left| S\right| &= & \int _{x=0}^b\int _{y=0}^{h\sin kx} dydx   
+	\nonumber
+	\\
+	&=& \int_0^b h\sin(kx) dx 
+	\nonumber
+	\\
+	&=& 
+	\frac{2bh}{\pi}
+\end{eqnarray}
+となる．一方，$x$軸に関する断面１次モーメント$G$と断面2次モーメント$I_x$は，
+それぞれ以下のように求められる．
+\begin{eqnarray}
+	G &=& 
+	\int _{x=0}^b\int _{y=0}^{h\sin kx} ydydx   
+	\nonumber \\
+	&=&
+	\int _{x=0}^b\left[ \frac{y^2}{2} \right]_0^{h\sin(kx)}dx   
+	\nonumber \\
+	&=& \frac{h^2}{2} \int_0^b \sin^2 (kx)dx
+	\nonumber \\
+	&=& \frac{h^2}{2k} \int_0^\pi \frac{1-\cos2\theta }{2}d\theta, \ \ (\theta=kx) 
+	\nonumber \\
+	&=& \frac{bh^2}{4}
+\end{eqnarray}
+\begin{eqnarray}
+	I_x &= & 
+	\int _{x=0}^b\int _{y=0}^{h\sin kx} y^2dydx   
+	\nonumber \\
+	&=& \frac{h^3}{3} \int_0^b \sin^3 (kx) dx 
+	\nonumber \\
+	&=& \frac{h^3}{3k} \int_0^\pi \sin^3 \theta d\theta , \ \ (\theta=kx)
+	\nonumber \\
+	&=& \frac{h^3}{3k} \int_0^\pi \left( \frac{3}{4}\sin \theta -\frac{1}{4}\sin3\theta \right)d\theta 
+	\nonumber \\
+	&=& 
+	\frac{4}{9} \frac{bh^3}{\pi}
+	\\
+\end{eqnarray}
+以上より，中立軸位置$\bar Y$は
+\begin{equation}
+	\bar Y = \frac{G}{\left|S\right|}=\frac{\pi h}{8}
+\end{equation}
+となり，中立軸まわりの断面2次モーメント$I$は
+\begin{equation}
+	I = I_x -S\bar Y^2 =  \left(\frac{4}{9\pi}-\frac{\pi}{32} \right) bh^3
+\end{equation}
+と得ることができる．
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{問題2}
+図\ref{fig:fig1}-(a)に示すような，幅$b$,高さ$h$の直角三角形の,$X$軸に関する
+断面2次モーメント$I(b,h)$は
+\begin{equation}
+	I(b,h)=\int_{Y=0}^h\int_{X=0}^{b\left(1-\frac{Y}{h}\right)}Y^2dXdY= \frac{bh^3}{12}
+	\label{eqn:Ibh}
+\end{equation}
+である.一方,図\ref{fig:fig1}-(b)のような正方形は,幅$a/\sqrt{2}$,高さ$a/\sqrt{2}$
+の直角三角形４つに分割することができるので,その$X$軸に関する断面2次モーメント$I_b$は
+\begin{equation}
+	I_b
+	=
+	4 \left. I(b,h) \right|
+	_{b=h=\frac{a}{\sqrt{2}}}
+	=\frac{a^4}{12}
+\end{equation}
+である.
+ここで,問題で与えられた断面を図\ref{fig:fig1}-(c)のような,3つの正方形部分断面$S_1, S_2$と$S_3$に
+分割する.部分断面$S_i,\,(i=1,2,3)$の面積を$\left|S_i\right|$, 中立軸位置を$\bar Y_i$, 中立軸回りの
+断面２次モーメントを$I_i$とする.これらは,
+\begin{equation}
+	\left| S_i\right|=a^2, \ \ I_i=\frac{a^4}{12} \ \ (i=1,2,3) 
+\end{equation}
+\begin{equation}
+	\bar Y_1=\bar Y_2=0, \ \ \bar Y_3=\frac{a}{\sqrt{2}}
+\end{equation}
+である.従って, 断面$S=S_1\cup S_2 \cup S_3$の中立軸位置は
+\begin{equation}
+	\bar Y=\sum _{i=1}^3 \frac{\left|S_i\right|}{\left|S\right|}\bar Y_i =\frac{a}{3\sqrt{2}}
+\end{equation}
+となる．以上の結果を利用して断面$S$の中立軸$\bar Y$に関する断面2次モーメント$I(S)$を求めると
+\begin{equation}
+	I(S)=\sum_{i=1}^3 \left \{ I_i + \left|S_i\right|\left(\bar Y_i-\bar Y\right)^2 \right\} =\frac{7}{12}a^4
+\end{equation}
+となる.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------------------
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=0.6\linewidth]{fig1ans.eps} 
+	\end{center}
+	\caption{断面2次モーメントの計算に用いた部分断面.} 
+	\label{fig:fig1}
+\end{figure}
+%--------------------
+\end{document}
+%--------------------
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=0.60\linewidth]{fig2ans.eps} 
+	\end{center}
+	\caption{断面係数計算のための座標系.} 
+	\label{fig:fig2}
+\end{figure}
+%--------------------
+\end{document}
