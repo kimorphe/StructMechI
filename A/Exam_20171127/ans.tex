@@ -65,7 +65,7 @@
 		\label{eqn:bcon}
 	\end{equation}
 \item
-	$EA$が一定であることから$u''=-p/EA$である．また，式(\ref{eqn:gv_eq})と(\ref{eqn:px})を考慮し，
+	$EA$が一定であることから$u''=-p/EA$である．また，式(\ref{eqn:gv_eq})より，
 	積分定数を$C_1, C_2$とすれば，
 	\begin{equation}
 		u(x)=-\frac{p_0l^2}{6EA}\left\{
@@ -101,13 +101,13 @@
 	と得られる．
 \item
 	式(\ref{eqn:Nx})より，$N(-l)=0$,
-	$N(2l)=-\frac{3p_0l}{2}$である．よって，棒部材は
-	支点Aでは反力はゼロで，支点Bでは左向きに大きさ$\frac{2p_0l}{3}$の反力を受ける．
+	$N(2l)=-\frac{3p_0l}{2}$である．よって，支点Aで反力はゼロ，
+	支点Bでは左向きに大きさ$\frac{2p_0l}{3}$の反力を受ける．
 \item
-	式(\ref{eqn:ux})より，変位は$x=l$で最大値$\frac{2p_0l^3}{3EA}$をとる．
+	式(\ref{eqn:ux})より，変位は$x=l$で最大値$\frac{2p_0l^2}{3EA}$をとる．
 	一方，変位の最小値は，部材両端部における値$u(-l)=u(2l)=0$であることから，
 	伸びが最大になる区間は$-l<x<l $で, その区間での伸びは
-	$\frac{2p_0l^3}{3EA}$である．
+	$\frac{2p_0l^2}{3EA}$である．
 \end{enumerate}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -139,7 +139,7 @@
 \item
 	\begin{equation}
 		\fat{t}^{(n)}
-		=\fat{\sigma}\fat{n}
+		=\fat{\sigma}^T\fat{n}
 		=
 		\left( 
 		\begin{array}{c}
@@ -166,7 +166,7 @@
 		\right\}
 		=R\cos(\phi-2\alpha)
 	\end{equation}
-		だから、$\alpha_{max}=\frac{\phi}{2}$で，$t_{max}=R=\sqrt{q^2+r^2}$．
+		だから，$\alpha_{max}=\frac{\phi}{2}$で，$t_{max}=R=\sqrt{q^2+r^2}$．
 \item
 	直ひずみと直応力の関係は
 	\begin{equation}
@@ -249,15 +249,15 @@
 		\varepsilon_{11}=\frac{1+\nu}{E}R, \ \ 
 		\varepsilon_{22}=-\frac{1+\nu}{E}R
 	\end{equation}
-	の結果が得られる．
+	が得られる．
 \item
-	一般の$\theta$に対する$o-x_1'x_2'$座標系において，直応力$\sigma_{11}',\sigma_{22}'$は，
+	$o-x_1'x_2'$座標系において直応力$\sigma_{11}',\sigma_{22}'$は，
 	\begin{eqnarray}
 		\sigma_{11}'&=&R\cos(\phi-2\theta) \\ 
 		\sigma_{22}'&=&-R\cos(\phi-2\theta) 
 	\end{eqnarray}
 	だから，
-	これと$\sigma_{33}'=0$を式(\ref{eqn:Hooke_d})に代入すると，
+	これと$\sigma_{33}'=0$を式(\ref{eqn:Hooke_d})に代入すれば，
 	\begin{eqnarray}
 		\varepsilon_{11}'&=&\frac{1+\nu}{E}R\cos(\phi-2\theta) \\ 
 		\varepsilon_{22}'&=&-\frac{1+\nu}{E}R\cos(\phi-2\theta) 
