@@ -41,19 +41,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\vspace*{\baselineskip}
 \begin{center}
-{\Large \bf 2018年度 構造力学I及び演習B (1月25日) 演習問題6 解答} \\
+{\Large \bf 2019年度 構造力学I及び演習B 演習問題6 解答} \\
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{問題1.}
-図\ref{fig:fig1}-(a)に示すように,区間BC内に単位荷重が加えられたとき，
-支点部Bに発生する曲げモーメントを求める.そのために,(a)に示した構造を,
-同図の(b)と(c)のような２つの静定構造の重ね合わせで表現する.
-ここで,$R_B$は,系(a)の点Bにおいて発生する鉛直方向の支点反力を表す.
-はじめに,系(c)のたわみ$v_c$を,たわみの微分方程式を単純支持条件の元で
-解くことによって求めると,その結果は$\alpha=a/l,\, \beta=b/l, \, \xi=x/l$として,
+図\ref{fig:fig1}-(a)に示すように$x$座標をとり,$x=a$の位置に単位荷重が
+加えられたときに，支点Bに発生する鉛直反力$R_B$を求める.
+そのために,(a)に示した構造を，図\ref{fig:fig1}の(b)と(c)のような２つの静定構造の重ね合わせで表現する.
+はじめに，系(c)のたわみ$v_c$を,たわみの微分方程式を単純支持条件の元で
+解くことによって求めると，その結果は$\alpha=a/l,\, \beta=b/l, \, \xi=x/l$として,
 \begin{equation}
  v_c=\frac{\tilde Pl^3}{6EI}\left\{
- \left< \xi-\alpha \right>^3 -\beta \xi^3 +\beta (1-\beta^2)\xi 
+ \left< \xi-\alpha \right>^3 -\xi^3 +3\alpha \xi 
  \right\}
  \label{eqn:vc}
 \end{equation}
@@ -61,7 +60,7 @@
 置くことで,
 \begin{equation}
  v_b=\frac{(-R_B)l^3}{6EI}\left\{
-		\left< \xi-\frac{1}{2} \right>^3 -\frac{1}{2} \xi^3 +\frac{3}{8}\xi 
+		\left< \xi-\frac{1}{2} \right>^3 -\xi^3 +\frac{3}{2}\xi 
 	\right\}
 	\label{eqn:vb}
 \end{equation}
@@ -73,25 +72,21 @@
 \end{equation}
 に代入すれば,未知の支点反力$R_B$が
 \begin{equation}
-	R_B=(3\beta-4\beta^3)\tilde P
+	R_B=
+	\tilde P
+	\left\{
+		\left< \frac{1}{2}-\alpha \right>^3-\frac{1}{2}+3\alpha
+	\right\}
+	=\left\{
+	\begin{array}{cc}
+		2\alpha^2(3-2\alpha)\tilde P & \left(\alpha < \frac{1}{2}\right) \\
+		\left(3\alpha-\frac{1}{2}\right)\tilde P & \left(\alpha > \frac{1}{2}\right)
+	\end{array}
+	\right.
 	\label{eqn:RB}
 \end{equation}
-と求めれられる.系(a)の支点AとCにおける反力は,$R_B$が既知となったため,釣り合い条件
-から決定することができ,その結果は
-\begin{equation}
-	R_A=\beta \tilde P -\frac{R_B}{2}=\left(2\beta^3-\frac{1}{2}\beta \right)\tilde P, \ \ 
-	R_C=\alpha \tilde P -\frac{R_B}{2}=\left(2\beta^3-\frac{3}{2}\beta +\alpha \right)\tilde P, \ \ 
-\end{equation}
-となる．また，点Bにおける曲げモーメント$M_B$も釣り合い条件から求まり，
-\begin{equation}
-	M_B=R_A\times\frac{l}{2}=\frac{\tilde Pl}{4} \beta (4\beta^2-1)
-\end{equation}
-となる.$\alpha \in (1/2,1), \, \beta \in (0,1)$なので,以上により，影響線の右半分(区間BC)
-が得られたことになる.単位荷重が区間AC内にあるときも,同様にして影響線を計算することができる. 
-しかしながらこの問題では,曲げに関する支持条件の対称性から,影響線は点Bに関して左右対照となる
-ことがわかるので,上で求めた結果に加えてこのことを踏まえれば，
-左半分の区間について実際に計算を行うことなく影響線が
-図\ref{fig:fig2}のようになることが分かる．
+と求めれられる.
+この結果を$a$の関数として図示すれば，$R_B$の影響線が図\ref{fig:fig2}のようになることが分かる．
 %%--------------------
 \begin{figure}[h]
 	\begin{center}
@@ -105,7 +100,7 @@
 	\begin{center}
 	\includegraphics[width=0.7\linewidth]{fig2ans.eps} 
 	\end{center}
-	\caption{支点部Bにおける曲げモーメント$M_B$の影響線}
+	\caption{支点部Bにおける鉛直反力$R_B$の影響線.}
 	\label{fig:fig2}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,23 +110,30 @@
 \subsubsection*{問題2.}
 \begin{enumerate}
 \item
-支点A,C,D,Fにおける鉛直反力と,ヒンジ部BとEにおいて伝達される鉛直力の
-正方向を各々図\ref{fig:fig3}-(a)のように定める.
-これらの鉛直力は,区間AB，BE，EFそれぞれにおいて力とモーメントの釣り合いを考える
-ことで，以下のように決定される.
+支点AとEにおける鉛直反力と,ヒンジ部BとDにおいて伝達される鉛直力の正方向をそれぞれ図\ref{fig:fig3}-(a)のように定める.
+これらの鉛直力は,区間AB，BD，DEのそれぞれの区間における力とモーメントの釣り合いを考えることで決定できる．
+はじめに，区間BDにおける釣り合い条件から，
 \begin{equation}
-	R_A=R_B=\frac{q_0l}{4}, \ \ 
-	R_C=q_0l, \ \ R_D=-\frac{q_0l}{4}, \ \ R_E=R_F=0
+	R_B=\frac{3}{8}q_0l, \ \ R_D=\frac{1}{8}q_0l
+\end{equation}
+が言える．
+\item
+問1の結果を踏まえて区間ABとDEの釣り合い条件を用いれば，両固定端における反力が以下のように求められる．
+\begin{equation}
+	R_A=\frac{7}{8}q_0l, \ \ M_A=-\frac{5}{16}q_0l^2  
+\end{equation}
+\begin{equation}
+	R_E=\frac{1}{8}q_0l, \ \ M_E=-\frac{1}{16}q_0l^2
 \end{equation}
 \item
-区間AB，BE，EFの単位で構造を見ると,すべて静定構造となっているため，区間毎に釣り合い条件を適用して
+区間AB，BD，DEの単位で構造を見ると,すべて静定構造となっているため，区間毎に釣り合い条件を適用して
 曲げモーメントを求めることができる.その結果を曲げモーメント図として示せば,図\ref{fig:fig4}のように
 なる.この図には,曲げモーメント分布は連続で,等分布荷重が加わる区間は2次関数的に,
-荷重が作用しない区間では直線的に曲げモーメント値が変化することが示されていることに注意する.
+荷重が作用しない区間では直線的に曲げモーメント値が変化することが示されている.
 \item
-図\ref{fig:fig4}より,曲げモーメントは点Cにおいて最大値をとる.
+図\ref{fig:fig4}より,曲げモーメントは点A($x=0$)において最大値をとる.
 \begin{equation}
-	M_{max}=\left|-\frac{q_0l^2}{4}\right| = \frac{q_0l^2}{4}
+	M_{max}=\left|-\frac{5}{16}q_0l^2\right| = \frac{5}{16}q_0l^2
 \end{equation}
 \item
 曲げ応力$\sigma=\frac{M}{I}y$は,曲げモーメントが最大となる断面の上縁$y=-a$あるいは下縁$y=a$において最大となる.
@@ -141,16 +143,18 @@
 \end{equation}
 だから,
 \begin{equation}
-	\sigma_{max}=\frac{M_{max}}{I}a=\frac{q_0l^2}{\pi a^3}
+	\sigma_{max}=
+	\frac{M_{max}}{I}a=
+	\frac{5}{4} \frac{q_0l^2}{\pi a^3}
 \end{equation}
 となる.
 \item
 上で求めた$\sigma_{max}$を不等式$\sigma_{max}<\sigma_a$に代入し,$a$に関して
 整理すれば,
 \begin{equation}
-	a \geq \sqrt[3]{\frac{q_0l^2}{\pi \sigma_a}} 
+	a \geq \sqrt[3]{\frac{5}{4\pi}\frac{q_0l^2}{\sigma_a}} 
 \end{equation}
-となるので,許容される$a$の最小値は$\sqrt[3]{\frac{q_0l^2}{\pi \sigma_a}}$である.
+		となるので,許容される$a$の最小値は$\sqrt[3]{\frac{5}{4\pi}\frac{q_0l^2}{\sigma_a}}$である.
 \end{enumerate}
 %--------------------
 \begin{figure}[h]

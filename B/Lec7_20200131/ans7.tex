@@ -41,7 +41,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\vspace*{\baselineskip}
 \begin{center}
-{\Large \bf 2018年度 構造力学I及び演習B(2月1日) 演習問題7 解答} \\
+{\Large \bf 2019年度 構造力学I及び演習B 演習問題7 解答} \\
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{問題1.}
@@ -52,55 +52,50 @@
 	\varepsilon_i^T 
 	+
 	\varepsilon_i^M, \ \ (i=1,2,3) 
+	\label{eqn:eps_sum}
 \end{equation}
-と表される．熱歪みは，線膨張係数$\alpha_i$と部材1と2の上昇温度$\Delta T$を用いて
+と表される．熱歪みは，線膨張係数$\alpha_i$と$\Delta T$を用いて
 \begin{equation}
-	\varepsilon_i^T= \alpha_i \Delta T, \ \ (i=1,2), \ \ 
-	\varepsilon_3^T=0
+	\varepsilon_i^T= \alpha_i \Delta T, \ \ (i=1,2,3)
 \end{equation}
 と表される.一方，機械的ひずみは，ヤング率$E_i$と応力$\sigma_i$により，
 \begin{equation}
 	\varepsilon_i^M= \frac{\sigma_i}{E_i}, \ \ (i=1,2,3)
+	\label{eqn:Hooke}
 \end{equation}
-で与えられる．材料$i$の部分に発生する軸力を$N_i$とすれば，
+で与えられる．材料$i$の部分に発生する軸力を$N_i=\sigma_i A_i$とすれば，
 中央の剛体壁に作用する軸力は釣り合う必要があることから
 \begin{equation}
 	-N_1-N_2+N_3=0 
 	\label{eqn:equib}
 \end{equation}
-である．一方，材料$i$に発生する伸び$\Delta l_i$は，
+である．ただし，$A_i$は部材$i$の断面積を表す．一方，材料$i$に発生する伸び$\Delta l_i$は，
+部材$i$の長さを$l_i$とすれば，
 \begin{equation}
-	\Delta l_i = \varepsilon_i l, \ \ (i=1,2,3) 
+	\Delta l_i = \varepsilon_i l_i, \ \ (i=1,2,3) 
 \end{equation}
 で，適合条件:
 \begin{equation}
-	\Delta l_1=\Delta l_2 \ \ \Delta_1+\Delta l_3=0
+	\Delta l_1=\Delta l_2 \ \ \Delta l_1+\Delta l_3=0
 	\label{eqn:compati}
 \end{equation}
-を満足しなければならない．そこで,式(\ref{eqn:equib}),(\ref{eqn:compati})から
-$\sigma_1, \sigma_2, \sigma_3$を求めれば
-\begin{eqnarray}
-	\sigma_1 &=& 
-	\frac{E_1}{E_1+E_2+E_3} \left\{E_2\alpha_2-(E_2+E_3)\alpha_1\right\}\Delta T
-	\\
-	\sigma_2 &=& 
-	\frac{E_2}{E_1+E_2+E_3} \left\{E_1\alpha_1-(E_1+E_3)\alpha_2\right\}\Delta T
-	\\
-	\sigma_3 &=& 
-	-\frac{E_3}{E_1+E_2+E_3} \left( \alpha_1 E_1+\alpha_2E_2\right)\Delta T
-\end{eqnarray}
-となる.以上より,
+を満足しなければならない．
+ここで，式(\ref{eqn:eps_sum})と式(\ref{eqn:Hooke})より，
 \begin{equation}
-	\Delta l_3= \varepsilon_3 l = \varepsilon^M_3 l = \frac{\sigma_3}{E_3}l
-	=
-	-\frac{
-		( \alpha_1 E_1+\alpha_2E_2)
-	}{E_1+E_2+E_3}\Delta Tl
+	N_i=\sigma_i A_i=\sigma_i=E_iA_i\left( \varepsilon_i-\alpha_i \Delta T\right), \ \ (i=1,2,3)
+	\label{eqn:axial_forces}
 \end{equation}
-と，部材efの伸びが求めらる．よって，$\Delta T>0$のとき,剛体壁2は右方向に
-%\begin{equation}
-$\frac{( \alpha_1 E_1+\alpha_2E_2)}{E_1+E_2+E_3} \Delta Tl$
-%\end{equation}
-だけ移動することが分かる.
+だから，式(\ref{eqn:axial_forces})と式(\ref{eqn:compati})を用いて，式(\ref{eqn:equib})から
+$\varepsilon_1$と$\varepsilon_2$を消去すれば，
+\begin{equation}
+	\varepsilon_1=\frac{\alpha_1E_1+\alpha_2E_2-\alpha_3 E_3}{E_1+E_2+2E_3}
+\end{equation}
+となることが示される．
+$\varepsilon_1>0$のとき，剛体壁2は右方向に移動する．
+よって，剛体壁2が右方向に移動するための条件は，$E_i>0$だから
+\begin{equation}
+	\alpha_1E_1+\alpha_2E_2-\alpha_3 E_3 >0
+\end{equation}
+と表すことができる．
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

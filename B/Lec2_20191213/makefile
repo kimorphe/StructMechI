@@ -10,12 +10,10 @@ fig1.eps: fig1.svgz
 
 ans2.pdf: ans2.dvi
 	dvipdfmx -p a4 ans2.dvi
-ans2.dvi: ans2.tex fig1ans1.eps fig1ans2.eps fig2ans1.eps fig2ans2.eps
+ans2.dvi: ans2.tex fig1ans1.eps fig2ans1.eps fig2ans2.eps
 	platex ans2.tex
 fig1ans1.eps: fig1ans1.svgz
 	inkscape -z -f fig1ans1.svgz -E fig1ans1.eps
-fig1ans2.eps: fig1ans2.svgz
-	inkscape -z -f fig1ans2.svgz -E fig1ans2.eps
 fig2ans1.eps: fig2ans1.svgz
 	inkscape -z -f fig2ans1.svgz -E fig2ans1.eps
 fig2ans2.eps: fig2ans2.svgz

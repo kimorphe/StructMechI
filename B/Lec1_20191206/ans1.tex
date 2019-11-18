@@ -41,12 +41,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\vspace*{\baselineskip}
 \begin{center}
-{\Large \bf 2018年度 構造力学I及び演習B 演習問題1(12月15日出題分) 解答} \\
+{\Large \bf 2019年度 構造力学I及び演習B 演習問題1 解答} \\
 \end{center}
-\begin{flushright}
-	式(4)を修正(2019/01/11)\\
-	式(14)を修正(2019/01/29)\\
-\end{flushright}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 問題1, 2とも$EI$が一定のため，
 微分方程式$EIv^{(4)}=q(x)$を，与えられた外力$q(x)$と
@@ -56,10 +52,10 @@
 \subsubsection*{問題1. }
 \begin{enumerate}
 \item
-$q(x)=\frac{2q_0}{l}\left<x-\frac{l}{2}\right>$より，
+	$q(x)=q_0H\left(\frac{l}{2}-x\right)=q_0H\left(\frac{1}{2}-\frac{x}{l}\right)$より，
 \begin{equation}
-	v(x)=\frac{q_0l^4}{60EI}\left\{
-			\left< \frac{x}{l} -\frac{1}{2} \right>^5
+	v(x)=\frac{q_0l^4}{24EI}\left\{
+			\left< \frac{1}{2} -\frac{x}{l} \right>^4
 			+
 			C_1\left(\frac{x}{l}\right)^3
 			+
@@ -72,28 +68,30 @@ $q(x)=\frac{2q_0}{l}\left<x-\frac{l}{2}\right>$より，
 		\label{eqn:gen_sol1}
 \end{equation}
 と表すことができる．式(\ref{eqn:gen_sol1})に含まれる積分定数は，支点AとBにおける
-支持条件から，以下のように決まる．支点Aにおける支持条件:
-\begin{equation}
-	v(0) =0, \, v'(0)=0.
-	\label{eqn:BC1_A}
-\end{equation}
-より, $C_3=C_4=0$.一方，支点Bにおける支持条件:
+支持条件から，以下のように決まる．
+支点Bにおける支持条件:
 \begin{equation}
 	M(l)=-EIv''(l) =0,
 	\ \  
 	Q(l)=-EIv'''(l) =0,
 	\label{eqn:BC1_B}
 \end{equation}
-より，$C_1=-\frac{5}{2},\, C_2=\frac{25}{4}$となる．よってたわみ$v$は
+より，$C_1=C_2=0$となる．一方，支点Aにおける支持条件:
 \begin{equation}
-	v(x)=\frac{q_0l^4}{60EI}\left\{
-			\left< \frac{x}{l} -\frac{1}{2} \right>^5
-			-
-			\frac{5}{2}	
-			\left(\frac{x}{l}\right)^3
+	v(0) =0, \, v'(0)=0.
+	\label{eqn:BC1_A}
+\end{equation}
+より, $C_3=\frac{1}{2},\, C_4=-\frac{1}{16}$.
+
+よってたわみ$v$は
+\begin{equation}
+	v(x)=\frac{q_0l^4}{24EI}\left\{
+			\left< \frac{1}{2} -\frac{x}{l} \right>^4
 			+
-			\frac{25}{4}	
-			\left(\frac{x}{l}\right)^2
+			\frac{1}{2}	
+			\left(\frac{x}{l}\right)
+			-
+			\frac{1}{16}	
 			\right\}
 	\label{eqn:v1}
 \end{equation}
@@ -102,24 +100,12 @@ $q(x)=\frac{2q_0}{l}\left<x-\frac{l}{2}\right>$より，
 曲げモーメント$M(x)$とせん断力$Q(x)$は，式(\ref{eqn:v1})より
 \begin{eqnarray}
 	M(x) &=& 
-		-\frac{q_0l^2}{12}\left\{
-				4
-				\left< \frac{x}{l} -\frac{1}{2} \right>^3
-				-
-				3
-				\left(\frac{x}{l}\right)
-				+
-				\frac{5}{2}
-		\right\}
+		-\frac{q_0l^2}{2}
+				\left< \frac{1}{2} -\frac{x}{l} \right>^2
 	\label{eqn:M1}
 	\\
 	Q(x) &=&
-		\frac{q_0l}{4} 
-		\left\{
-				1-
-				4
-				\left<\frac{x}{l} -\frac{1}{2}\right>^2
-		\right\}
+		q_0l \left<\frac{1}{2} -\frac{x}{l}\right>
 	\label{eqn:Q1}
 \end{eqnarray}
 となる．これらを断面力図として示せば図\ref{fig:fig1}の(b)および(c)のようになる．
@@ -135,8 +121,8 @@ $q(x)=\frac{2q_0}{l}\left<x-\frac{l}{2}\right>$より，
 \item
 支点反力の向きを図\ref{fig:fig1}-(a)に示すようにとれば，
 \begin{equation}
-	R_A = Q(0) = \frac{q_0l}{4}, \ \ 
-	M_A = M(0) = -\frac{5}{24}q_0l^2
+	R_A = Q(0) = \frac{q_0l}{2}, \ \ 
+	M_A = M(0) = -\frac{1}{8}q_0l^2
 \end{equation}
 となる．
 \end{enumerate}
@@ -147,13 +133,13 @@ $q(x)=\frac{2q_0}{l}\left<x-\frac{l}{2}\right>$より，
 \item
 外力$q(x)$はディラクのデルタ関数を用いて
 \begin{equation}
-	q(x)=P\delta \left(x-\frac{l}{3} \right)
+	q(x)=P\delta \left(x-\frac{2l}{3} \right)
 	\label{eqn:qx_dlt}
 \end{equation}
 と表される．よって，たわみ$v(x)$は，$C_1\sim C_4$を積分定数として
 \begin{equation}
 	v(x)=\frac{Pl^3}{6EI}\left\{
-			\left< \frac{x}{l} -\frac{1}{3}\right>^3
+			\left< \frac{x}{l} -\frac{2}{3}\right>^3
 			+
 			C_1\left(\frac{x}{l}\right)^3
 			+
@@ -165,9 +151,9 @@ $q(x)=\frac{2q_0}{l}\left<x-\frac{l}{2}\right>$より，
 		\right\}
 		\label{eqn:gen_sol2}
 \end{equation}
-と書くことができる．よって，曲げモーメントは
+	と書くことができる．式(\ref{eqn:gen_sol2})より，曲げモーメントは
 \begin{equation}
-	M(x)=-\frac{Pl}{6}\left\{
+	M(x)=-EIv''=-\frac{Pl}{6}\left\{
 			6\left< \frac{x}{l} -\frac{1}{3}\right>
 			+
 			6C_1\left(\frac{x}{l}\right)
@@ -177,21 +163,21 @@ $q(x)=\frac{2q_0}{l}\left<x-\frac{l}{2}\right>$より，
 \end{equation}
 だから，点Aにおける支持条件:
 \begin{equation}
-	v(0)=0,\, M(0)=-EIv''(l)=0
+	v(0)=0,\, v'(0)=0
 \end{equation}
-より$C_2=C_4=0$が, 点Cにおける支持条件
+より$C_3=C_4=0$が, 点Cにおける支持条件
 \begin{equation}
-	v(l)=0,\, M(l)=0
+	v(l)=0,\, M(l)=-EIv''(l)=0
 \end{equation}
-より，$C_1=-\frac{2}{3}, \, C_3=\frac{10}{27}$ときまる．以上より，
+より，$C_1=-\frac{13}{27}, \, C_2=\frac{4}{9}$ときまる．以上より，
 たわみは
 \begin{equation}
 	v(x)=\frac{Pl^3}{6EI}\left\{
-			\left< \frac{x}{l} -\frac{1}{3}\right>^3
+			\left< \frac{x}{l} -\frac{2}{3}\right>^3
 			-
-			\frac{2}{3}\left(\frac{x}{l}\right)^3
+			\frac{13}{27}\left(\frac{x}{l}\right)^3
 			+
-			\frac{10}{27}\left( \frac{x}{l} \right)
+			\frac{4}{9}\left( \frac{x}{l} \right)^2
 			\right\}
 	\label{eqn:v2}
 \end{equation}
@@ -202,17 +188,18 @@ $q(x)=\frac{2q_0}{l}\left<x-\frac{l}{2}\right>$より，
 	M(x) &=& 
 		-\frac{Pl}{3}
 			\left\{
-				3\left< \frac{x}{l} - \frac{1}{3}\right> 
-				-2\left(\frac{x}{l}\right)
+				3\left< \frac{x}{l} - \frac{2}{3}\right> 
+				-\frac{13}{9}\left(\frac{x}{l}\right)
+				+\frac{4}{9}
 			\right\}
 	\label{eqn:M2}
 	\\
 	Q(x) &=&
 		-\frac{P}{3}
 		\left\{
-				3H\left(\frac{x}{l} -\frac{1}{3}\right)
+				3H\left(\frac{x}{l} -\frac{2}{3}\right)
 				-
-				2
+				\frac{13}{9}
 		\right\}
 	\label{eqn:Q2}
 \end{eqnarray}
@@ -229,8 +216,9 @@ $q(x)=\frac{2q_0}{l}\left<x-\frac{l}{2}\right>$より，
 \item
 支点反力の向きを図\ref{fig:fig2}-(a)のようにとれば，
 \begin{equation}
-	R_A = Q(0) =  \frac{2}{3}P, \ \  
-	R_C = -Q(l) =  \frac{1}{3}P
+	R_A = Q(0) =  \frac{13}{27}P, \ \  
+	M_A = M(0) =  -\frac{4}{27}Pl, \ \  
+	R_C = -Q(l) =  \frac{14}{27}P
 \end{equation}
 となる．
 \end{enumerate}
