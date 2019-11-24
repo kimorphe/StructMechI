@@ -85,7 +85,7 @@
 	\begin{center}
 	\includegraphics[width=0.50\linewidth]{fig1ans1.eps} 
 	\end{center}
-	\caption{単一の集中荷重を受ける単純支持された梁.} 
+	\caption{解答に用いた自由物体図(a)$\sim$(d)と断面力図(e)と(f)(問題1).} 
 	\label{fig:fig1_1}
 \end{figure}
 %--------------------
@@ -97,7 +97,10 @@
 \begin{eqnarray}
 	\left\{
 	\begin{array}{ll}
-		R_A+R_C-\frac{1}{2}\times \frac{l}{2}\times q_0 + \frac{l}{2}\times q_0=0
+		R_A+R_C-\left(
+			\frac{1}{2}\times \frac{l}{2}\times q_0 + \frac{l}{2}\times q_0
+			\right)
+			=0
 		\\
 		R_A\times l 
 		+\frac{q_0l}{4}\times \left(\frac{l}{2}+\frac{l}{2}\times \frac{1}{3}\right)
@@ -113,7 +116,7 @@
 となる．
 次に，図\ref{fig:fig2_1}-(a)のa-a'および b-b'で梁を仮想的に
 切断し, その結果得られる部分構造について自由物体図を描けば, 
-同図(b)と(c)のようになる．また，これらの自由物体図に現れる分布荷重を
+同図(b)と(c)のようになる．また，これらの自由物体図に現れる分布荷重を，
 それと等価な集中荷重に置き換えれば，図\ref{fig:fig2_1}-(b')と(c')のよう
 になる．この結果を踏まえて釣り合い条件式を立てれば，断面力分布が
 区間毎に以下のように求められる．
@@ -121,7 +124,7 @@
 \item
 	区間AB$\left( 0<x<\frac{l}{2}\right)$:\\
 	\begin{equation}
-		Q(x)=R_A-\frac{x}{2}\times \frac{2q_0}{l}x =0
+		Q(x)=R_A-\frac{x}{2}\times \frac{2q_0}{l}x 
 	\end{equation}
 	\begin{equation}
 		M=R_Ax-
@@ -144,10 +147,10 @@
 \item
 	区間BC$\left( 0<y<\frac{l}{2}\right)$:\\
 	\begin{equation}
-		Q(s_)=q_0s-Rb
+		Q(s_)=q_0s-R_C
 	\end{equation}
 	\begin{equation}
-		M(s)=R_Bs -\frac{1}{2}q_0s^2 
+		M(s)=R_Cs -\frac{1}{2}q_0s^2 
 	\end{equation}
 	より，
 	\begin{equation}

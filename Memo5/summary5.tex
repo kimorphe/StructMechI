@@ -42,11 +42,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\vspace*{\baselineskip}
 \begin{center}
-	{\Large \bf 2018年度 構造力学I及び演習B 講義内容のまとめ2} \\
+	{\Large \bf 2019年度 構造力学I及び演習B 講義内容のまとめ2} \\
 \end{center}
-\begin{flushright}
-	2018/12/07講義終了後に修正
-\end{flushright}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ディラクのデルタ関数による集中荷重の表現}
 一点に集中して加わる荷重(集中荷重あるいは点荷重)を表現するために，次のような関数を
@@ -60,13 +57,13 @@
 \begin{equation}
 	U(x;a):=\left\{
 		\begin{array}{cc}
-			1/a & \left(\left| x \right| < a/2 \right) \\
-			0 & \left(\left| x \right| > a/2 \right) 
+			1/a & \left(\left| x \right| < \frac{a}{2} \right) \\
+			0 & \left(\left| x \right| > \frac{a}{2} \right) 
 		\end{array}
 		\right.
 	\label{eqn:def_U}
 \end{equation}
-$U(x;a)/a$の$(-\infty,\,\infty)$における積分値は1であるので，
+$U(x;a)$の$(-\infty,\,\infty)$における積分値は1であるので，
 $\delta(x)$により，大きさ１の単位荷重を表すことができる．また，
 \begin{equation}
 	\delta(x)=\left\{
@@ -78,9 +75,10 @@ $\delta(x)$により，大きさ１の単位荷重を表すことができる．
 	\label{eqn:delta_x_val}
 \end{equation}
 であることから，$\delta(x)$は$x=0$のみに作用する単位荷重であることも分かる．
-$\delta(x)$は"ディラクのデルタ関数"と呼ばれ，$x=0$を除き至るところゼロで
-あるにも関わらず, $(-\infty,\infty)$における積分値が1になるという
-特異な性質を持つ．このことをより正確に表現すると，デルタ関数は
+$\delta(x)$は，$x=0$を除き至るところゼロであるにも関わらず, 
+$(-\infty,\infty)$における積分値が1になるという特異な性質を持つ関数で，
+"{\bf ディラクのデルタ関数}"と呼ばれる．
+この性質は
 \begin{equation}
 	\int _b^c \delta(x) dx = \left\{
 	\begin{array}{cc}
@@ -90,9 +88,9 @@ $\delta(x)$は"ディラクのデルタ関数"と呼ばれ，$x=0$を除き至�
 	\label{eqn:idelta_ab}
 	\right.
 \end{equation}
-となる性質があると言える．荷重の作用点位置が$x=s$で，その大きさが1でなく$F$の場合には，
-デルタ関数を$\delta(x)$を，$x$座標軸上で$s$だけ平行移動して$F$倍した$F\delta (x-s)$
-で荷重を表現することができる．以下ではデルタ関数を利用して, 集中荷重を受ける梁の，たわみや断面力を計算する方法について学ぶ．
+と表すことができる．荷重の作用点位置が$x=s$で大きさが$F$の場合には，
+デルタ関数を$\delta(x)$を$x$座標軸上で$s$だけ平行移動して$F$倍した$F\delta (x-s)$
+で荷重を表現することができる．以下ではデルタ関数を利用して, 集中荷重を受ける梁のたわみや断面力を計算する方法について学ぶ．
 \begin{figure}
 	\begin{center}
 	\includegraphics[width=0.7\linewidth]{fig8_2.eps} 
@@ -111,7 +109,7 @@ $\delta(x)$は"ディラクのデルタ関数"と呼ばれ，$x=0$を除き至�
 $x=a$に大きさ$F$の集中が加えられた場合のたわみを求めることができる．
 また，その結果を$x$について微分することで，たわみ角$\theta(x)$や曲げモーメント
 $M(x)$，せん断力$Q(x)$も得ることができる．
-勿論，そのためにはデルタ関数で表された外力$q(x)$を4階積分する必要がある．
+そのためには，デルタ関数で表された外力$q(x)$を4階積分する必要がある．
 デルタ関数$\delta(x)$の4階までの積分は以下のように表される．
 \begin{eqnarray}
 	\int_{-\infty}^x \delta(y)dy &=& H(x) 
@@ -136,17 +134,18 @@ $M(x)$，せん断力$Q(x)$も得ることができる．
 	\right.
 \end{equation}
 で与えられる単位ステップ関数を表す．また，$\left< \cdot \right>$
-はマッコーレーの括弧と呼ばれ，任意の関数$f(x)$に対して，次のような
+は"{\bf マッコーレーの括弧}"と呼ばれ，任意の関数$f(x)$に対して，次のような
 作用を施すことを意味する．
 \begin{equation}
 	\left< f(x) \right>=
 	\left\{
 	\begin{array}{cc}
-		f(x) & (f(x) \ge 0) \\
-		0 & (f(x) < 0)
+		f(x) & ({\rm for\;} x\; {\rm s.t.} \; f(x) \ge 0) \\
+		0 & ({\rm for}\; x \; {\rm s.t.} \;  f(x) < 0)
 	\end{array}
 	\right.
 \end{equation}
+なお，"for $x$ s.t $\sim$" は，"for $x$ such that $\sim $($\sim$ であるような$x$に対して)"と読む．
 これより，マッコーレーの括弧は，例えば，
 \begin{equation}
 	\left< x-a \right>=
@@ -161,8 +160,8 @@ $M(x)$，せん断力$Q(x)$も得ることができる．
 図\ref{fig:fig8_2}-(a)に示すように，$U(x;a)$の
 積分$\int_{-\infty}^x U(y;a)dy$を計算し，
 その極限($a\rightarrow +0$)をとることによって得られる．
-あるいは，式(\ref{eqn:idelta_ab})において，$b=x,a\rightarrow -\infty$
-としても同じ結果が得られる．なお，積分と極限操作の順序は，一般に交換可能でないが，ここでは
+あるいは，式(\ref{eqn:idelta_ab})において，$c=x,b\rightarrow -\infty$
+としても同じ結果が得られる．なお，積分と極限操作の順序は一般に交換可能でないが，ここでは
 その点には立ち入らない．
 一方，式(\ref{eqn:iint_dlt})-(\ref{eqn:iiiint_dlt})の関係を導出するには,
 $U(x;a)$を所定の回数積分して$a\rightarrow +0$の極限をとったと考えても，

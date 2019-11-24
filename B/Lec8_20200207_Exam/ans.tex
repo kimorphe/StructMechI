@@ -96,7 +96,7 @@
 \end{equation}
 と与えられ，また，$v_F+v_R=0$であることから，
 \begin{equation}
-	R_D=\frac{14}{24}F
+	R_D=\frac{14}{27}F
 	\label{eqn:RB_c}
 \end{equation}
 と点Dの鉛直反力が決まる．これを踏まえ，梁全体の釣り合い条件を使えば，固定端Aにおける反力が
@@ -170,7 +170,7 @@
 この結果を断面力図として図示すれば，図\ref{fig:fig3}の区間ABの
 部分に示したようになる．
 \item
-図\ref{fig:fig2}-(a)に示すb-b'断面で構造を切断し, 部材2に関する部分構造の自由物体図を描くと
+図\ref{fig:fig2}-(a)に示すb-b'断面で構造を切断し, 部材2に関する部分構造の自由物体図を描くと，
 同図(c)のようになる．これを参照してつり合い条件から断面力分布を求めれば，
 \begin{eqnarray}
 	N_2 &=& \frac{R_D-H_A}{\sqrt{2}}=-\frac{q_0l}{2\sqrt{2}} \\
@@ -192,15 +192,15 @@
 \item
 部材断面に発生する直応力$\sigma$のうち，
 軸力に起因する応力を$\sigma_N$, 曲げ応力を$\sigma_M$とすると，
-$\sigma=\sigma_N+\sigma_M$で，$\sigma_N$と$\sigma_M$は
+$\sigma=\sigma_N+\sigma_M$で，$\sigma_N$と$\sigma_M$は，それぞれ
 \begin{equation}
 	\sigma_N(x,y)=\frac{N}{A}=\frac{N}{bh}, \ \
 	\sigma_M(x,y)=\frac{M(x)}{I}y=\frac{12M(x)}{bh^3}y
 	\label{eqn:}
 \end{equation}
 で与えられる．ただし$y$は，梁断面内の点の中立面から距離を意味する．
-この問題では，軸力は各部材内で一定のため，$\sigma_N$は部材内では一定値となる．
-一方，$\sigma_M$は$y$に対して単調に変化することから，$\sigma_M$の最大値は
+この問題では各部材内で軸力が一定のため，$\sigma_N$も部材内で一定値をとる．
+$\sigma_M$は$y$に対して単調に変化することから，$\sigma_M$の最大値は
 \begin{equation}
 	\left| \sigma_M\left(x_{max},\pm \frac{h}{2}\right)\right|=\frac{6M_{max}}{bh^2}
 	\label{eqn:eq_lbl}
@@ -209,20 +209,20 @@ $\sigma=\sigma_N+\sigma_M$で，$\sigma_N$と$\sigma_M$は
 それぞれ，曲げモーメントの最大値とそれを与える断面の座標を表す．
 そこで，
 \begin{equation}
-	H(N,M_{max}):=\frac{N}{bh}+\frac{6M_{max}}{bh^2}
+	\gamma(N,M_{max}):=\frac{N}{bh}+\frac{6M_{max}}{bh^2}
 	\label{eqn:cost}
 \end{equation}
 を部材毎に求めると，
 \begin{eqnarray}
-	部材1(節点B) &:& H=\frac{q_0l}{b}\left( \frac{1}{2}\frac{l}{h}+3\frac{l^2}{h^2}\right)=305\frac{q_0l}{b}\\
-	部材2(節点C) &:& H=\frac{q_0l}{b}\left( -\frac{1}{2}\frac{l}{h}+12\frac{l^2}{h^2}\right)=1,195\frac{q_0l}{b}\\
-	部材3(節点C) &:& H=\frac{q_0l}{b}\left( -\frac{1}{2\sqrt{2}}\frac{l}{h}+12\frac{l^2}{h^2}\right)=
-	\left(1,200-\frac{5}{\sqrt{2}}\right)\frac{q_0l}{b}\\
+	部材1(節点B) &:& \gamma=\frac{q_0}{b}\left( \frac{1}{2}\frac{l}{h}+3\frac{l^2}{h^2}\right)=305\frac{q_0}{b}\\
+	部材2(節点C) &:& \gamma=\frac{q_0}{b}\left( -\frac{1}{2\sqrt{2}}\frac{l}{h}+12\frac{l^2}{h^2}\right)=
+	\left(1,200-\frac{5}{\sqrt{2}}\right)\frac{q_0}{b}\\
+	部材3(節点C) &:& \gamma=\frac{q_0}{b}\left( -\frac{1}{2}\frac{l}{h}+12\frac{l^2}{h^2}\right)=1,195\frac{q_0}{b}
 	\label{eqn:Hvals}
 \end{eqnarray}
-となる．以上より，最大引張応力は，部材3の節点Cにおいて生じ，その大きさは
+となる．以上より，最大引張応力は，部材2の節点Cにおいて生じ，その大きさは
 \begin{equation}
-	\sigma=\left(1,200-\frac{5}{\sqrt{2}}\right)\frac{q_0l}{b}
+	\sigma=\left(1,200-\frac{5}{\sqrt{2}}\right)\frac{q_0}{b}
 	\label{eqn:sig_max}
 \end{equation}
 であると分かる．

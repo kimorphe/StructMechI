@@ -54,7 +54,7 @@
 	\varepsilon_i^M, \ \ (i=1,2,3) 
 	\label{eqn:eps_sum}
 \end{equation}
-と表される．熱歪みは，線膨張係数$\alpha_i$と$\Delta T$を用いて
+と表される．熱ひずみは，線膨張係数$\alpha_i$と$\Delta T$を用いて
 \begin{equation}
 	\varepsilon_i^T= \alpha_i \Delta T, \ \ (i=1,2,3)
 \end{equation}
@@ -63,7 +63,7 @@
 	\varepsilon_i^M= \frac{\sigma_i}{E_i}, \ \ (i=1,2,3)
 	\label{eqn:Hooke}
 \end{equation}
-で与えられる．材料$i$の部分に発生する軸力を$N_i=\sigma_i A_i$とすれば，
+で与えられる．材料$i$に発生する軸力を$N_i=\sigma_i A_i$とすれば，
 中央の剛体壁に作用する軸力は釣り合う必要があることから
 \begin{equation}
 	-N_1-N_2+N_3=0 
@@ -80,21 +80,21 @@
 	\label{eqn:compati}
 \end{equation}
 を満足しなければならない．
-ここで，式(\ref{eqn:eps_sum})と式(\ref{eqn:Hooke})より，
+ここで，式(\ref{eqn:eps_sum})$\sim$式(\ref{eqn:Hooke})より，
 \begin{equation}
 	N_i=\sigma_i A_i=\sigma_i=E_iA_i\left( \varepsilon_i-\alpha_i \Delta T\right), \ \ (i=1,2,3)
 	\label{eqn:axial_forces}
 \end{equation}
 だから，式(\ref{eqn:axial_forces})と式(\ref{eqn:compati})を用いて，式(\ref{eqn:equib})から
-$\varepsilon_1$と$\varepsilon_2$を消去すれば，
+$\varepsilon_2$と$\varepsilon_3$を消去すれば，
 \begin{equation}
-	\varepsilon_1=\frac{\alpha_1E_1+\alpha_2E_2-\alpha_3 E_3}{E_1+E_2+2E_3}
+	\varepsilon_1=\frac{\alpha_1E_1+\alpha_2E_2-2\alpha_3 E_3}{E_1+E_2+E_3} \Delta T
 \end{equation}
 となることが示される．
 $\varepsilon_1>0$のとき，剛体壁2は右方向に移動する．
 よって，剛体壁2が右方向に移動するための条件は，$E_i>0$だから
 \begin{equation}
-	\alpha_1E_1+\alpha_2E_2-\alpha_3 E_3 >0
+	\alpha_1E_1+\alpha_2E_2-2\alpha_3 E_3 >0
 \end{equation}
 と表すことができる．
 \end{document}

@@ -45,14 +45,14 @@
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{問題1.}
-図\ref{fig:fig1}-(a)に示すように$x$座標をとり,$x=a$の位置に単位荷重が
+図\ref{fig:fig1}-(a)に示すように$x$座標をとり，$x=a$の位置に単位荷重が
 加えられたときに，支点Bに発生する鉛直反力$R_B$を求める.
-そのために,(a)に示した構造を，図\ref{fig:fig1}の(b)と(c)のような２つの静定構造の重ね合わせで表現する.
-はじめに，系(c)のたわみ$v_c$を,たわみの微分方程式を単純支持条件の元で
-解くことによって求めると，その結果は$\alpha=a/l,\, \beta=b/l, \, \xi=x/l$として,
+そのために，(a)に示した構造を，図\ref{fig:fig1}の(b)と(c)のような２つの静定構造の重ね合わせで表現する.
+はじめに，系(c)のたわみ$v_c$を,たわみの微分方程式を指定された支持条件の元で解くことによって求めると，
+その結果は$\alpha=a/l,\, \beta=b/l, \, \xi=x/l$として,
 \begin{equation}
  v_c=\frac{\tilde Pl^3}{6EI}\left\{
- \left< \xi-\alpha \right>^3 -\xi^3 +3\alpha \xi 
+ \left< \xi-\alpha \right>^3 -\xi^3 +3\alpha \xi^2 
  \right\}
  \label{eqn:vc}
 \end{equation}
@@ -60,7 +60,7 @@
 置くことで,
 \begin{equation}
  v_b=\frac{(-R_B)l^3}{6EI}\left\{
-		\left< \xi-\frac{1}{2} \right>^3 -\xi^3 +\frac{3}{2}\xi 
+		\left< \xi-\frac{1}{2} \right>^3 -\xi^3 +\frac{3}{2}\xi^2
 	\right\}
 	\label{eqn:vb}
 \end{equation}
@@ -75,7 +75,7 @@
 	R_B=
 	\tilde P
 	\left\{
-		\left< \frac{1}{2}-\alpha \right>^3-\frac{1}{2}+3\alpha
+		4\left< \frac{1}{2}-\alpha \right>^3-\frac{1}{2}+3\alpha
 	\right\}
 	=\left\{
 	\begin{array}{cc}
@@ -98,7 +98,7 @@
 %--------------------
 \begin{figure}[h]
 	\begin{center}
-	\includegraphics[width=0.7\linewidth]{fig2ans.eps} 
+	\includegraphics[width=0.6\linewidth]{fig2ans.eps} 
 	\end{center}
 	\caption{支点部Bにおける鉛直反力$R_B$の影響線.}
 	\label{fig:fig2}
@@ -162,8 +162,8 @@
 	\includegraphics[width=0.7\linewidth]{fig3ans.eps} 
 	\end{center}
 	\caption{
-		(a)支点反力の正方向と切断面二つの位置a-a', b-b'. 
-		(b) 曲げモーメント図.} 
+		支点反力とヒンジ部で伝達される鉛直力の正方向．
+		} 
 	\label{fig:fig3}
 \end{figure}
 \begin{figure}[h]
@@ -171,8 +171,7 @@
 	\includegraphics[width=0.7\linewidth]{fig4ans.eps} 
 	\end{center}
 	\caption{
-		(a)支点反力の正方向と切断面二つの位置a-a', b-b'. 
-		(b) 曲げモーメント図.} 
+		曲げモーメント図.} 
 	\label{fig:fig4}
 \end{figure}
 \end{document}

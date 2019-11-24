@@ -49,7 +49,7 @@
 \item
 図\ref{fig:fig1}-(b$_1$)のように$x$座標をとると，分布荷重$q(x)$は
 $q(x)=q_0H\left(x-l\right)$と表すことができる．
-$q(x)$を4回積分した結果は
+$q(x)$の4階の不定積分は
 \begin{equation}
 	\int q(x) dx^4
 	= 
@@ -93,7 +93,7 @@ $v(2l)=0,\, v'(2l)=0$より，$C_1=-\frac{3}{4},\, C_2=\frac{5}{4}$
 となる．これより，点Bのたわみは
 \begin{equation}
 	v_B=v\left( l \right) 
-	= \frac{1}{48}\frac{q_0l^4}{EI}.
+	= \frac{1}{48}\frac{q_0l^4}{EI}
 	\label{eqn:vc_q}
 \end{equation}
 と求められる．
@@ -119,13 +119,13 @@ $v(2l)=0,\, v'(2l)=0$より，$C_1=-\frac{3}{4},\, C_2=\frac{5}{4}$
 	\right\}
 	\label{eqn:vx2}
 \end{equation}
-となる．この結果より，点Bにおけるたわみは
+と与えられる．よって，点Bにおけるたわみは
 \begin{equation}
 	v_2\left( l \right) 
 	= -\frac{R_Bl^3}{24EI}.
 	\label{eqn:vc_P}
 \end{equation}
-である．$v_B$と$v_2$は相殺すべきものであることから，
+である．$v_B$と$v_2(l)$は相殺すべきものであることから，
 \begin{equation}
 	v_B+v_2(l)=0 \ \ \Rightarrow \ \ R_B=\frac{1}{2}q_0l
 	\label{eqn:RB}
@@ -141,7 +141,7 @@ $v(2l)=0,\, v'(2l)=0$より，$C_1=-\frac{3}{4},\, C_2=\frac{5}{4}$
 \begin{equation}
 	Q_1=-(EIv_1'')', \ \ Q_2=-(EIv_2'')',
 \end{equation}
-とすれば，求めるべき曲げモーメント$M$とせん断力$Q$は
+と書けば，求めるべき曲げモーメント$M$とせん断力$Q$を
 \begin{equation}
 	M(x)=M_1(x)+M_2(x),  \  \
 	Q(x)=Q_1(x)+Q_2(x)
@@ -173,27 +173,26 @@ $v(2l)=0,\, v'(2l)=0$より，$C_1=-\frac{3}{4},\, C_2=\frac{5}{4}$
 	\right\}
 	\label{eqn:Q2}
 \end{eqnarray}
-と求められる．これより，部材端でのせん断力と曲げモーメントが以下のように決まる．
+と求められる．これより，
 \begin{equation}
-	M_1(0)=-\frac{5}{48}q_0l^2, \ \ M_2(0)=\frac{R_Bl}{4}
+	M_1(0)=-\frac{5}{48}q_0l^2, \ \ M_2(0)=\frac{R_Bl}{4}=\frac{q_0l^2}{8}
 \end{equation}
 \begin{equation}
-	M_1(2l)=-\frac{11}{48}q_0l^2, \ \ M_2(2l)=\frac{R_Bl}{4}
+	M_1(2l)=-\frac{11}{48}q_0l^2, \ \ M_2(2l)=\frac{R_Bl}{4}=\frac{q_0l^2}{8}
 \end{equation}
 \begin{equation}
-	Q_1(0)=-\frac{3}{16}q_0l, \ \ Q_2(0)=-\frac{R_B}{2}
+	Q_1(0)=\frac{3}{16}q_0l, \ \ Q_2(0)=-\frac{R_B}{2}=-\frac{q_0l}{4}
 \end{equation}
 \begin{equation}
-	Q_1(2l)=-\frac{13}{16}q_0l, \ \ Q_2(2l)=-\frac{R_B}{2}
+	Q_1(2l)=-\frac{13}{16}q_0l, \ \ Q_2(2l)=\frac{R_B}{2}=\frac{q_0l}{4}
 \end{equation}
-以上より，
+となることから，部材端でのせん断力と曲げモーメントが以下のように決まる．
 \begin{equation}
 	R_A=Q_1(0)+Q_2(0)= -\frac{1}{16}q_0l, \ \ R_C=-Q_1(2l)-Q_2(2l)=-\frac{9}{16}q_0l
 \end{equation}
 \begin{equation}
 	M_A=M_1(0)+M_2(0)= \frac{1}{48}q_0l^2, \ \ M_C=M_1(2l)+M_2(2l)=-\frac{5}{48}q_0l^2
 \end{equation}
-と全ての反力が求まる．
 \item
 曲げモーメント$M=M_1+M_2$は，式(\ref{eqn:M1})と式(\ref{eqn:M2})より，
 \begin{itemize}
@@ -207,7 +206,7 @@ $v(2l)=0,\, v'(2l)=0$より，$C_1=-\frac{3}{4},\, C_2=\frac{5}{4}$
 	$x>l$のとき:
 	\begin{equation}
 		M(x)=\frac{q_0l^2}{2}\left( -\eta^2 +\frac{7}{8}\eta - \frac{1}{12}\right), \ \ 
-		\left( \eta=1-\frac{x}{l}\right)
+		\left( \eta=\frac{x}{l}-1\right)
 		\label{eqn:M_right}
 	\end{equation}
 \end{itemize}
